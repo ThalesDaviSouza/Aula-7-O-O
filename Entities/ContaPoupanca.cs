@@ -6,7 +6,7 @@
 
         
         public override void Update(double tax) {
-            base.Update(tax * 3);
+            this.Saldo +=  Saldo * tax * 3;
         }
 
 

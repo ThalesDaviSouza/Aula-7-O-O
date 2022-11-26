@@ -1,6 +1,6 @@
 ﻿namespace Aula7.Entities {
-    public class Conta {
-        public double Saldo { get; private set; }
+    public abstract class Conta {
+        public double Saldo { get; private protected set; }
         
         // Contructors
         public Conta() { }
@@ -17,9 +17,7 @@
             Saldo -= amount;
         }
 
-        public virtual void Update(double tax) {
-            Saldo += Saldo * tax;
-        }
+        public abstract void Update(double tax);
 
     }
 }
