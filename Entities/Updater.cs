@@ -2,24 +2,24 @@
 
 namespace Aula7.Entities {
     public class Updater {
-        private static double _totalAmount = 0;
-        private static double _selic = 0;
+        public static double TotalAmount { get; private set; } = 0;
+        public static double Selic { get; private set; } = 0;
 
         public static void UpdateSelic(double selic) {
-            Updater._selic = selic;
+            Updater.Selic = selic;
         }
 
         public static double GetTotalAmount() {
-            return Updater._totalAmount;
+            return Updater.TotalAmount;
         }
 
         public static void Update(Conta conta) {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Saldo anterior [R$ {conta.getSaldo().ToString("F2")}]");
-            conta.Update(_selic);
-            sb.AppendLine($"Saldo final [R$ {conta.getSaldo().ToString("F2")}]");
+            sb.AppendLine($"Saldo anterior [R$ {conta.Saldo.ToString("F2")}]");
+            conta.Update(Selic);
+            sb.AppendLine($"Saldo final [R$ {conta.Saldo.ToString("F2")}]");
             Console.WriteLine(sb.ToString());
-            Updater._totalAmount += conta.getSaldo();
+            Updater.TotalAmount += conta.Saldo;
         }
     }
 }

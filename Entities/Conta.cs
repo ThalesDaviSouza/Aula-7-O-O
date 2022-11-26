@@ -1,31 +1,24 @@
 ﻿namespace Aula7.Entities {
     public class Conta {
-        private double _saldo;
+        public double Saldo { get; private set; }
         
         // Contructors
-        public Conta() {
-            _saldo = 0;
-        }
+        public Conta() { }
         public Conta(double saldo) {
-            _saldo = saldo;
-        }
-
-        // Getters and Setters
-        public double getSaldo() {
-            return _saldo;
+            Saldo = saldo;
         }
 
         // Methods
         public virtual void Deposit(double amount) {
-            _saldo += amount;
+            Saldo += amount;
         }
 
         public void Withdraw(double amount) {
-            _saldo -= amount;
+            Saldo -= amount;
         }
 
         public virtual void Update(double tax) {
-            _saldo += _saldo * tax;
+            Saldo += Saldo * tax;
         }
 
     }

@@ -14,20 +14,20 @@ class Program {
         Conta conta9 = new ContaPoupanca(5600);
 
         Bank bank = new Bank();
-        bank.Adiciona(conta0);
-        bank.Adiciona(conta1);
-        bank.Adiciona(conta2);
-        bank.Adiciona(conta3);
-        bank.Adiciona(conta4);
-        bank.Adiciona(conta5);
-        bank.Adiciona(conta6);
-        bank.Adiciona(conta7);
-        bank.Adiciona(conta8);
-        bank.Adiciona(conta9);
+        bank.AdicionaConta(conta0);
+        bank.AdicionaConta(conta1);
+        bank.AdicionaConta(conta2);
+        bank.AdicionaConta(conta3);
+        bank.AdicionaConta(conta4);
+        bank.AdicionaConta(conta5);
+        bank.AdicionaConta(conta6);
+        bank.AdicionaConta(conta7);
+        bank.AdicionaConta(conta8);
+        bank.AdicionaConta(conta9);
 
         Updater.UpdateSelic(0.13);
 
-        foreach(Conta conta in bank.GetContas()) {
+        foreach(Conta conta in bank.Contas) {
             Updater.Update(conta);
         }
 
