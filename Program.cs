@@ -33,5 +33,15 @@ class Program {
 
         Console.WriteLine("Saldo total: {0}", Updater.GetTotalAmount());
 
+
+        ContaCorrente c1 = new ContaCorrente(200);
+        ContaCorrente c2 = new ContaCorrente(200);
+        ContaCorrente c3 = new ContaCorrente(200);
+        ContaCorrente c4 = new ContaCorrente(200);
+        SeguroDeVida seguro1 = new SeguroDeVida("Bradesco", 2, 450);
+        SeguroDeVida seguro2 = new SeguroDeVida("Life Center", 4, 650);
+        GerenciadorDeImpostoDeRenda impostoDeRenda = new GerenciadorDeImpostoDeRenda(c1, seguro1, c2, c3, seguro2, c4);
+        Console.WriteLine($"Total de imposto de renda: {impostoDeRenda.TotalTaxes().ToString("F2")}");
+
     }
 }
